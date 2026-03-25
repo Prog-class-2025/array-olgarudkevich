@@ -219,7 +219,7 @@ namespace Project1 {
 			int diagsum = 0;
 			for (int i = 0; i < 5; i++)
 				diagsum += matrix[i][i];
-			MessageBox::Show("Діагональ =  " + diagsum.ToString());
+			MessageBox::Show("Діагональ = " + diagsum.ToString());
 		}
 
 		if (comboBox1->SelectedIndex == 8) // Транспонування
