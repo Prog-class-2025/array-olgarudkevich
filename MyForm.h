@@ -183,7 +183,13 @@ namespace Project1 {
 
 		if (comboBox1->SelectedIndex == 4) // Парні/непарні
 		{
-			//TODO: Вивести кількість парних та непарних елементів масиву
+			int parni = 0, neparni = 0;
+			for (int i = 0; i < 5; i++)
+			{
+				if (mas1[i] % 2 == 0) parni++;
+				else neparni++;
+			}
+			MessageBox::Show("Парні = " + Convert::ToString(parni) + "\nНепарні = " + Convert::ToString(neparni));
 		}
 		if (comboBox1->SelectedIndex == 5) // Заповнити матрицю
 		{
