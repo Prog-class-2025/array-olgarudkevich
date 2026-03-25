@@ -76,7 +76,7 @@ namespace Project1 {
 					L"Парні/непарні", L"Заповнити матрицю  ", L"Сума рядків", L"Діагональ", L"Транспонування", L"Сортування обміном  ", L"Сортування екстремальних"
 			});
 			this->comboBox1->Location = System::Drawing::Point(27, 193);
-			this->comboBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(2);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(133, 28);
 			this->comboBox1->TabIndex = 0;
@@ -85,7 +85,7 @@ namespace Project1 {
 			// button1
 			// 
 			this->button1->Location = System::Drawing::Point(351, 252);
-			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(106, 53);
 			this->button1->TabIndex = 1;
@@ -97,7 +97,7 @@ namespace Project1 {
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Location = System::Drawing::Point(218, 50);
-			this->dataGridView1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 40;
 			this->dataGridView1->RowTemplate->Height = 24;
@@ -109,7 +109,7 @@ namespace Project1 {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"MicroSquare", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(587, 272);
+			this->label1->Location = System::Drawing::Point(476, 269);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(0, 18);
 			this->label1->TabIndex = 3;
@@ -121,12 +121,12 @@ namespace Project1 {
 			this->BackColor = System::Drawing::Color::White;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
-			this->ClientSize = System::Drawing::Size(700, 348);
+			this->ClientSize = System::Drawing::Size(788, 348);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->comboBox1);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
@@ -216,7 +216,10 @@ namespace Project1 {
 
 		if (comboBox1->SelectedIndex == 7) // Діагональ
 		{
-			//TODO: Вивести елементи головної діагоналі матриці
+			int diagsum = 0;
+			for (int i = 0; i < 5; i++)
+				diagsum += matrix[i][i];
+			MessageBox::Show("Діагональ =  " + diagsum.ToString());
 		}
 
 		if (comboBox1->SelectedIndex == 8) // Транспонування
